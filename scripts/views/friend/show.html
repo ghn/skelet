@@ -1,0 +1,17 @@
+<!-- FRIEND detail-view
+================================================== -->
+
+<script type="text/template" id="friend-show-template">
+	<% _.each(item, function(c) { %>
+		<dl>
+			<dt>Language</dt>
+			<dd><%= c.language.val %></dd>
+	
+			<dt>Country</dt>
+			<dd><%= c.country.val %></dd>
+	
+			<dt>City</dt>
+			<dd><%= c.city.val %></dd>
+		</dl>
+	<% }); %>
+</script>

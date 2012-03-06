@@ -1,0 +1,38 @@
+body {
+  padding-top: 60px;
+}
+div.form div.control-group label {
+  display: inline-block;
+  width: 200px;
+  line-height: 28px;
+  text-align: right;
+  margin-right: 15px;
+}
+div.form div.control-group div.controls {
+  display: inline-block;
+}
+div.option {
+  display: inline-block;
+}
+div.row {
+  margin-top: 40px;
+}
+fieldset {
+  margin-bottom: 15px;
+}
+div#current-quote {
+  border: 1px solid #43AEDC;
+  border-radius: 5px;
+  padding: 15px;
+}
+div#help {
+  border-radius: 5px;
+  padding: 15px;
+}
+fieldset div.group {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+fieldset div.actions {
+  text-align: right;
+}
