@@ -1,4 +1,4 @@
-window.friendModel = Backbone.Model.extend({
+var friendModel = Backbone.Model.extend({
 	
 	defaults : {
 		'first_name'	: 'Jules',
@@ -11,8 +11,8 @@ window.friendModel = Backbone.Model.extend({
 		});
 	},
 	
-	validate : function(attrs) {
-		if ((attrs.first_name == "") || (attrs.last_name == "")) {
+	validate : function(attributes) {
+		if ((attributes.first_name == "") || (attributes.last_name == "")) {
 			return "First name and last name must be set";
 		}
 	},
@@ -22,7 +22,7 @@ window.friendModel = Backbone.Model.extend({
 	}
 });
 
-window.friendCollection = Backbone.Collection.extend({
+var friendCollection = Backbone.Collection.extend({
 	model	: friendModel,
 	
 	initialize : function() {
@@ -33,7 +33,7 @@ window.friendCollection = Backbone.Collection.extend({
 		this.add({
 			first_name : first_name,
 			last_name : last_name
-		})
+		});
 	},
 	
 	clear_list : function() {
@@ -51,7 +51,7 @@ window.friendCollection = Backbone.Collection.extend({
 	}
 });
 
-window.friendView = Backbone.View.extend({
+var friendView = Backbone.View.extend({
 	
 	el : $('#app'),
 	
@@ -67,18 +67,6 @@ window.friendView = Backbone.View.extend({
 	
 	initialize : function() {
 		this.model.bind("add remove", this.render_list, this);
-		
-		var context = this;
-		
-		// load views
-		require(["text!application/views/friend/show.html", "text!application/views/friend/list.html"],
-			function(show, list) {
-				context.template.show = _.template(show);
-				context.template.list = _.template(list);
-				
-				context.render_list();
-			}
-		);
 	},
 	
 	add_friend : function() {
@@ -91,8 +79,18 @@ window.friendView = Backbone.View.extend({
 	},
 	
 	render_list : function() {
-		$(this.el).html( this.template.list({friends : this.model.models}) );
-		return this;
+		
+		var context = this;
+		
+		// load views
+		require(["text!application/views/friend/list.html"],
+			function(list) {
+				context.template.list = _.template(list);
+				
+				$(context.el).html( context.template.list({friends : context.model.models}) );
+				return context;
+			}
+		);
 	},
 	
 	render_detail : function() {

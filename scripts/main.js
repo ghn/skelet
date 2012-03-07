@@ -3,9 +3,13 @@ require(["core/jquery.min",
 	"order!core/underscore.min",
 	"order!core/backbone.min",
 	"order!core/bootstrap.min",
-	"order!application/models/friend.class"], function(util) {
+	"order!application/controllers/main.class"], function(util) {
 	
 	$(function() {
-		friends = new friendCollection;
+		// Initiate the router
+		var app_router = new AppRouter;
+		
+		// Start Backbone history a neccesary step for bookmarkable URL's
+		Backbone.history.start();
     });
 });
