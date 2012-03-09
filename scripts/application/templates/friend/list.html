@@ -1,0 +1,14 @@
+<!-- Friend list-view
+================================================== -->
+
+<p>You have <%= friends.length %> friends. <button class="clear btn">Clear list</button></p>
+
+<ul>
+<% _.each(friends, function(friend) { %>
+	<li><%= friend.full_name() %>  # <%= friend.get('age') %> </li>
+<% }); %>
+</ul>
+
+<p><label for="first_name">First name</label><input type="input" name="first_name" value="" id="first_name" placeholder="Jules"></p>
+<p><label for="last_name">Last name</label><input type="input" name="last_name" value="" id="last_name" placeholder="Verne"></p>
+<p><input type="submit" name="some_name" value="Add" id="add_friend" class="btn btn-primary"></p>
