@@ -4,7 +4,7 @@
 <p>You have <%= friends.length %> friends. <button class="clear btn">Clear list</button></p>
 
 <ul>
-<% _.each(friends, function(friend) { %>
+<% _.each(friends.models, function(friend) { %>
 	<li><%= friend.full_name() %>  # <%= friend.get('age') %> </li>
 <% }); %>
 </ul>

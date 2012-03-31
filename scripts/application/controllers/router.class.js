@@ -1,11 +1,6 @@
 define([
-	
 	// Libs
-	"use!backbone",
-	
-	// modules
-	"modules/default.class",
-	"modules/friend.class"
+	"use!backbone"
 ],
 
 function(Backbone, defaultModule, friendModule) {
@@ -20,22 +15,18 @@ function(Backbone, defaultModule, friendModule) {
 			"/friend"		: "friend_list"
 		},
 	
-		pages : {
-			default_page : null,
-			friend_page : null
-		},
-	
-		initialize : function() {
-			this.pages.default_page = new defaultModule;
-			this.pages.friend_page = new friendModule;
-		},
+		initialize : function() {},
 	
 		default_action : function() {
-			this.pages.default_page.template.render();
+			require(["pages/homepage.class"], function(homepage) {
+				homepage.getInstance();
+			});
 		},
 	
 		friend_list : function() {
-			this.pages.friend_page.template.render_list();
+			require(["pages/friend.class"], function(friend) {
+				friend.getInstance();
+			});
 		}
 	});
 
