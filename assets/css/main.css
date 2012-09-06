@@ -36,3 +36,7 @@ fieldset div.group {
 fieldset div.actions {
   text-align: right;
 }
+
+div.github img {
+	z-index: 2000;
+}

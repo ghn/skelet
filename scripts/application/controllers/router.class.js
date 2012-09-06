@@ -12,7 +12,9 @@ function(Backbone, defaultModule, friendModule) {
 		routes: {
 			""				: "default_action",
 			"/"				: "default_action",
-			"/friend"		: "friend_list"
+			"/demo"		: "demo",
+			"/code"		: "code",
+			"/doc"		: "doc"
 		},
 	
 		initialize : function() {},
@@ -23,11 +25,20 @@ function(Backbone, defaultModule, friendModule) {
 			});
 		},
 	
-		friend_list : function() {
+		demo : function() {
 			require(["pages/friend.class"], function(friend) {
 				friend.getInstance();
 			});
-		}
+		},
+		
+		code : function() {},
+		
+		doc : function() {
+			require(["pages/doc.class"], function(doc) {
+				doc.getInstance();
+			});
+		},
+		
 	});
 
 	// !! important !!
