@@ -9,7 +9,7 @@ define([
 	"modules/friend.module",
 	
 	// templates
-	"text!templates/friend/list.html"
+	"text!templates/friend/default.html"
 ],
 
 function(Backbone, Dico, Friend, friendTemplate) {
@@ -20,7 +20,8 @@ function(Backbone, Dico, Friend, friendTemplate) {
 	
 		events : {
 			"click #add_friend"	: "add_friend",
-			"click .clear"		: "clear_list"
+			"click .clear"			: "clear_list",
+			"keypress input"		: "submit",
 		},
 	
 		template: _.template(friendTemplate),
@@ -31,8 +32,8 @@ function(Backbone, Dico, Friend, friendTemplate) {
 		
 		init : function() {
 			this.render();
-			
 			Friend.bind("add remove", this.render, this);
+			$('first_name').focus();
 		},
 		
 		render : function() {
@@ -50,6 +51,11 @@ function(Backbone, Dico, Friend, friendTemplate) {
 		clear_list : function() {
 			Friend.clear_list();
 			this.render();
+		},
+		
+		submit : function(e) {
+			var code = (e.keyCode ? e.keyCode : e.which);
+			if (code == 13) this.add_friend();
 		}
 	});
 	

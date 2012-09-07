@@ -13,7 +13,6 @@ function(Backbone, defaultModule, friendModule) {
 			""				: "default_action",
 			"/"				: "default_action",
 			"/demo"		: "demo",
-			"/code"		: "code",
 			"/doc"		: "doc"
 		},
 	
@@ -30,8 +29,6 @@ function(Backbone, defaultModule, friendModule) {
 				friend.getInstance();
 			});
 		},
-		
-		code : function() {},
 		
 		doc : function() {
 			require(["pages/doc.class"], function(doc) {
