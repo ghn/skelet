@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Beer Lausanne</title>
+		<title>Skelet</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
@@ -11,57 +11,41 @@
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/main.css" rel="stylesheet">
 		<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
-		
-		<style type="text/css" media="screen">
-			div.bar {
-				padding: 10px 0;
-				border-bottom: 2px solid #ddd;
-			}
-			div.map {
-				min-height: 600px;
-			}
-		</style>
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 	</head>
 	
-	<body id="app">
-		<div class="container">
-			<div class="navbar navbar-fixed-top">
-				<div class="navbar-inner">
-					<a class="brand" href="index.html">Demo Luca</a>
-					<ul class="nav">
-						<li><a href="#">About</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span4" id="lBar"></div>
-				<div class="span8">
-					<div class="commands">
-						<button class="btn terrasse">T</button>
-						<button class="btn hh">HH</button>
-						<button class="btn food">B</button>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="#/">Skelet</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li><a href="/#/demo">Demo</a></li>
+							<li><a href="/#/doc">Documentation</a></li>
+						</ul>
 					</div>
-					<div class="map"></div>
 				</div>
 			</div>
 		</div>
 		
-		<script type="text/template" id="templateBar">
-			<% if(_.isEmpty(bars)) { %>
-				<p>Pas de bar !</p>
-			<% } %>
-
-			<% _.each(bars, function(bar) { %>
-				<div class="bar">
-					<h3><%= bar.get('name') %></h3>
-					<p><%= bar.get('desc') %></p>
-					<% if(! _.isNull(bar.get('image'))) { %>
-						<img src="/assets/img/<%= bar.get('image') %>" alt="Image" class="img-polaroid">
-					<% } %>
+		<div id="app" class="container">
+			<div class="row">
+				<div class="span12">
+					<h1>Skelet</h1>
+					<p class="loading">loading ...</p>
 				</div>
-			<% }); %>
-		</script>
+			</div>
+		</div> <!-- /container -->
+		
+		<div class="github">
+			<a href="https://github.com/ghn/skelet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+		</div>
+		
+		<footer class="footer">
+			<div class="container">
+				ghu - 2012
+			</div>
+		</footer>
 		
 		<!-- Le javascript
 		================================================== -->
