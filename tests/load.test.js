@@ -3,7 +3,7 @@
  */
 define([
     // Load specs
-    "../../tests/specs/friend",
+    "tests/unit/friend",
 ],
 
 /********************************

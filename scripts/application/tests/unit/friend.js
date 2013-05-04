@@ -1,6 +1,5 @@
 define([
     "modules/friend.module"
-
 ], function(Friends) {
 
     describe("Friends", function() {
