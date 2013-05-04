@@ -22,12 +22,12 @@ function() {
         };
 
         var currentWindowOnload = window.onload;
-        window.onload = function() {
+        $(function() {
             if (currentWindowOnload) {
                 currentWindowOnload();
             }
             execJasmine();
-        };
+        });
 
         function execJasmine() {
             jasmineEnv.execute();
