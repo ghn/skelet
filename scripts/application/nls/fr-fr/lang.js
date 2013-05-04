@@ -1,4 +1,4 @@
 define({
-	"title"	: "Skelet pour Backbone", 
-	"color": "verte",
+    "title": "Skelet pour Backbone",
+    "color": "verte",
 });
