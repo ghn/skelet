@@ -3,7 +3,7 @@ define(["backbone"], function(Backbone, defaultModule, friendModule) {
     /**
      *    Main controllers
      */
-    var AppRouter = Backbone.Router.extend({
+    var Router = Backbone.Router.extend({
         routes: {
             ""     : "default_action",
             "demo" : "demo",
@@ -23,15 +23,7 @@ define(["backbone"], function(Backbone, defaultModule, friendModule) {
                 friend.init();
             });
         },
-
-        doc : function() {
-            require(["pages/doc.class"], function(doc) {
-                doc.init();
-            });
-        },
-
     });
 
-    // !! important !!
-    return AppRouter;
+    return Router;
 });

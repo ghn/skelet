@@ -1,12 +1,12 @@
 require([
     "backbone",
-    "controllers/router.class"
+    "controllers/router"
 ],
 
-function(Backbone, main_controller) {
+function(Backbone, Router) {
 
     // Initiate the router
-    var app_router = new main_controller;
+    var app_router = new Router;
 
     // Start Backbone history a neccesary step for bookmarkable URL's
     Backbone.history.start();
