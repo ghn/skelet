@@ -14,19 +14,19 @@ define(["backbone"], function(Backbone, defaultModule, friendModule) {
 
         default_action : function() {
             require(["pages/homepage.class"], function(homepage) {
-                homepage.getInstance();
+                homepage.init();
             });
         },
 
         demo : function() {
             require(["pages/friend.class"], function(friend) {
-                friend.getInstance();
+                friend.init();
             });
         },
 
         doc : function() {
             require(["pages/doc.class"], function(doc) {
-                doc.getInstance();
+                doc.init();
             });
         },
 

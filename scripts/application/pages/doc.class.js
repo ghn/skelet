@@ -12,9 +12,7 @@ function(Backbone, Dico, template) {
 
         template: _.template(template),
 
-        initialize : function() {
-            this.init();
-        },
+        initialize : function() {},
 
         init : function() {
             this.render();
@@ -25,17 +23,5 @@ function(Backbone, Dico, template) {
         },
     });
 
-    var instance = null;
-
-    return {
-        getInstance : function() {
-            if (_.isNull(instance)) {
-                instance = new DocView;
-                return instance;
-            } else {
-                instance.init();
-                return instance;
-            }
-        }
-    };
+    return new DocView;
 });

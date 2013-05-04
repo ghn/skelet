@@ -1,7 +1,6 @@
 define(["backbone"], function(Backbone) {
 
-    /** MODEL */
-    var friendModel = Backbone.Model.extend({
+    var Friend = Backbone.Model.extend({
 
         defaults : {
             'first_name'    : 'Jules',
@@ -26,30 +25,5 @@ define(["backbone"], function(Backbone) {
         }
     });
 
-    /** COLLECTION */
-    var friendCollection = Backbone.Collection.extend({
-        model    : friendModel,
-
-        url : 'friend',
-
-        // constructor
-        initialize : function() {},
-
-        clear_list : function() {
-            this.remove(this.models);
-        },
-
-        add_100_items : function() {
-            var context = this;
-            _(100).times(function() {
-                context.add({
-                    first_name : 'toto',
-                    last_name : 'tutu'
-                });
-            });
-        }
-    });
-
-    // !! important !!
-    return new friendCollection;
+    return Friend;
 });

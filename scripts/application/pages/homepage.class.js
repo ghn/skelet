@@ -25,17 +25,5 @@ function(Backbone, Dico, defaultTemplate) {
         }
     });
 
-    var instance = null;
-
-    return {
-        getInstance : function() {
-            if (_.isNull(instance)) {
-                instance = new DefaultView;
-                return instance;
-            } else {
-                instance.init();
-                return instance;
-            }
-        }
-    };
+    return new DefaultView;
 });

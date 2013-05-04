@@ -1,11 +1,11 @@
 define([
     "backbone",
     "i18n!nls/lang",
-    "modules/friend.module",
+    "modules/friends",
     "text!templates/friend/default.html"
 ],
 
-function(Backbone, Dico, Friend, friendTemplate) {
+function(Backbone, Dico, Friends, friendTemplate) {
 
     var FriendView = Backbone.View.extend({
 
@@ -19,30 +19,28 @@ function(Backbone, Dico, Friend, friendTemplate) {
 
         template: _.template(friendTemplate),
 
-        initialize : function() {
-            this.init();
-        },
+        initialize : function() {},
 
         init : function() {
             this.render();
-            Friend.bind("add remove", this.render, this);
+            Friends.bind("add remove", this.render, this);
             $('first_name').focus();
         },
 
         render : function() {
-            $(this.el).html( this.template({friends : Friend}) );
+            $(this.el).html( this.template({friends : Friends}) );
         },
 
         add_friend : function() {
             console.log("add");
-            Friend.add({
+            Friends.add({
                 first_name    : $('#first_name').val(),
                 last_name    :$('#last_name').val()
             });
         },
 
         clear_list : function() {
-            Friend.clear_list();
+            Friends.clear_list();
             this.render();
         },
 
@@ -52,17 +50,5 @@ function(Backbone, Dico, Friend, friendTemplate) {
         }
     });
 
-    var instance = null;
-
-    return {
-        getInstance : function() {
-            if (_.isNull(instance)) {
-                instance = new FriendView;
-                return instance;
-            } else {
-                instance.init();
-                return instance;
-            }
-        }
-    };
+    return new FriendView;
 });
