@@ -1,4 +1,4 @@
-define(["use!backbone"], function(Backbone) {
+define(["backbone"], function(Backbone) {
 
     /** MODEL */
     var friendModel = Backbone.Model.extend({

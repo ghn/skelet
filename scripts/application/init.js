@@ -1,10 +1,9 @@
 require([
-    "jquery",
-    "use!backbone",
+    "backbone",
     "controllers/router.class"
 ],
 
-function($, Backbone, main_controller) {
+function(Backbone, main_controller) {
 
     // Initiate the router
     var app_router = new main_controller;

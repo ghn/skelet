@@ -1,5 +1,5 @@
 define([
-    "use!backbone",
+    "backbone",
     "i18n!nls/lang",
     "text!templates/default/default.html"
 ],

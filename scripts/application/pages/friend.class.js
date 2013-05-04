@@ -1,5 +1,5 @@
 define([
-    "use!backbone",
+    "backbone",
     "i18n!nls/lang",
     "modules/friend.module",
     "text!templates/friend/default.html"

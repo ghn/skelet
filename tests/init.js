@@ -1,18 +1,10 @@
 require([
-    'jquery',
-    'use!backbone',
-    'use!validation',
-    
-    // Helper
+    'backbone',
     'helpers/message.class',
-    
-    // i18n
     'i18n!nls/lang',
-    
-    // Modules
     'controllers/router.class'
 ],
 
-function($, Backbone, Valdation, Message, Dictionary, Router) {
+function(Backbone, Message, Dictionary, Router) {
     console.log ('Iam ze test');
 });

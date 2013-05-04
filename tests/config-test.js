@@ -14,21 +14,18 @@ require.config({
         // bootstrap
         bootstrap    : "../vendors/bootstrap.min",
 
-        // Shim Plugin
-        use: "../vendors/require/use",
-
         // text plugin
         text : "../vendors/require/text"
     },
 
-    use: {
+    shim: {
         backbone: {
-            deps: ["use!underscore", "jquery"],
-            attach: "Backbone"
+            deps: ["underscore", "jquery"],
+            exports: "Backbone"
         },
 
         underscore: {
-            attach: "_"
+            exports: "_"
         }
     }
 });

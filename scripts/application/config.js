@@ -8,28 +8,23 @@ require.config({
 
     paths: {
         // Libraries
-        jquery      : "../vendors/jquery.min",
-        underscore  : "../vendors/underscore.min",
-        backbone    : "../vendors/backbone.min",
-
-        // bootstrap
-        bootstrap   : "../vendors/bootstrap.min",
-
-        // Shim Plugin
-        use: "../vendors/require/use",
+        jquery      : "../vendors/jquery/jquery.min",
+        underscore  : "../vendors/underscore/underscore-min",
+        backbone    : "../vendors/backbone/backbone-min",
 
         // text plugin
-        text : "../vendors/require/text"
+        i18n        : '../vendors/requirejs-i18n/i18n',
+        text        : "../vendors/requirejs-text/text"
     },
 
-    use: {
+    shim: {
         backbone: {
-            deps: ["use!underscore", "jquery"],
-            attach: "Backbone"
+            deps: ["underscore", "jquery", "i18n", "text"],
+            exports: "Backbone"
         },
 
         underscore: {
-            attach: "_"
+            exports: "_"
         }
     }
 });

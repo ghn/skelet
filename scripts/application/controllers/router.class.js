@@ -1,14 +1,13 @@
-define(["use!backbone"], function(Backbone, defaultModule, friendModule) {
+define(["backbone"], function(Backbone, defaultModule, friendModule) {
 
     /**
      *    Main controllers
      */
     var AppRouter = Backbone.Router.extend({
         routes: {
-            ""                : "default_action",
-            "/"                : "default_action",
-            "/demo"        : "demo",
-            "/doc"        : "doc"
+            ""     : "default_action",
+            "demo" : "demo",
+            "doc"  : "doc"
         },
 
         initialize : function() {},
