@@ -1,16 +1,22 @@
 Skelet for Backbone
 ===================
 
-
 Requirements
 ------------
 
+* [Nodejs](http://nodejs.org/)
 * [Twitter Bower](http://bower.io/)
 
 Installation
 ------------
 
+* npm install
 * bower install
+
+Run dev server
+--------------
+
+* node server.js
 
 Features
 --------
@@ -30,6 +36,7 @@ Components
 * RequireJS
 * Jasmine
 * jQuery
+* Grunt
 
 Create a page
 -------------
