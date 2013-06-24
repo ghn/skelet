@@ -1,4 +1,4 @@
-define(["backbone"], function(Backbone, defaultModule, friendModule) {
+define(["backbone"], function(Backbone) {
 
     /**
      *    Main controllers

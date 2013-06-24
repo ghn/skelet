@@ -12,12 +12,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        // documentation here http://www.jshint.com/docs
         jshint: {
             options: {
                 curly: true,
                 eqeqeq: true,
                 eqnull: true,
                 browser: true,
+                unused: true,
+                trailing: true,
                 globals: {
                     jQuery: true
                 },
