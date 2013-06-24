@@ -45,9 +45,9 @@ function(Backbone, Dico, Friends, friendTemplate) {
 
         submit : function(e) {
             var code = (e.keyCode ? e.keyCode : e.which);
-            if (code === 13) {
-				this.add_friend();
-			}
+            if (13 === code) {
+                this.add_friend();
+            }
         }
     });
 
