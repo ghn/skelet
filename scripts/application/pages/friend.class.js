@@ -12,9 +12,9 @@ function(Backbone, Dico, Friends, friendTemplate) {
         el : $('#app'),
 
         events : {
-            "click #add_friend"    : "add_friend",
-            "click .clear"            : "clear_list",
-            "keypress input"        : "submit",
+            "click #add_friend" : "add_friend",
+            "click .clear" : "clear_list",
+            "keypress input" : "submit",
         },
 
         template: _.template(friendTemplate),
@@ -32,10 +32,9 @@ function(Backbone, Dico, Friends, friendTemplate) {
         },
 
         add_friend : function() {
-            console.log("add");
             Friends.add({
-                first_name    : $('#first_name').val(),
-                last_name    :$('#last_name').val()
+                first_name : $('#first_name').val(),
+                last_name : $('#last_name').val()
             });
         },
 
@@ -46,9 +45,11 @@ function(Backbone, Dico, Friends, friendTemplate) {
 
         submit : function(e) {
             var code = (e.keyCode ? e.keyCode : e.which);
-            if (code == 13) this.add_friend();
+            if (code === 13) {
+				this.add_friend();
+			}
         }
     });
 
-    return new FriendView;
+    return new FriendView();
 });

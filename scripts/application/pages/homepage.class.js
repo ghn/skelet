@@ -25,5 +25,5 @@ function(Backbone, Dico, defaultTemplate) {
         }
     });
 
-    return new DefaultView;
+    return new DefaultView();
 });

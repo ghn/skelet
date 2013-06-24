@@ -23,5 +23,5 @@ define(["backbone", "modules/friend"], function(Backbone, Friend) {
         }
     });
 
-    return new Friends;
+    return new Friends();
 });
