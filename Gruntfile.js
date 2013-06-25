@@ -1,4 +1,9 @@
 module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
     grunt.initConfig({
         less: {
             development: {
@@ -27,12 +32,30 @@ module.exports = function(grunt) {
                 },
             },
             uses_defaults: ['scripts/application/**/*.js']
-        }
+        },
+
+        express: {
+            default_option: {}
+        },
+
+        watch: {
+            assets: {
+                files: 'assets/css/**/*.less',
+                tasks: ['less'],
+                options: {
+                    debounceDelay: 250,
+                }
+            },
+            scripts: {
+                files: 'scripts/application/**/*.js',
+                tasks: ['jshint'],
+                options: {
+                    debounceDelay: 250,
+                },
+            }
+        },
     });
 
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
     // Default task(s).
-    grunt.registerTask('default', ['less', 'jshint']);
+    grunt.registerTask('server', ['less', 'express', 'watch']);
 };
