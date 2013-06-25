@@ -16,7 +16,7 @@ Installation
 Run dev server
 --------------
 
-* node server.js
+* grunt server
 
 Features
 --------
